@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/tvNetStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></TextView>
+
+    <EditText
+        android:id="@+id/etHostUri"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="hosturi"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNetStatus"></EditText>
+
+    <EditText
+        android:id="@+id/etUserName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="username"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etHostUri"></EditText>
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="password"
+        android:inputType="textPassword"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etUserName"></EditText>
+
+    <EditText
+        android:id="@+id/etClientId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="clientid"
+        app:layout_constraintTop_toBottomOf="@+id/etPassword"></EditText>
+
+    <EditText
+        android:id="@+id/etSubscribeTopics"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="sub_topics"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etClientId"></EditText>
+
+    <EditText
+        android:id="@+id/etSubQos"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="sub_qoss"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etSubscribeTopics"></EditText>
+
+    <CheckBox
+        android:id="@+id/cbCleanSession"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="cleansession"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etSubQos"></CheckBox>
+
+    <Button
+        android:id="@+id/btConnect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="connect"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cbCleanSession"></Button>
+
+    <Button
+        android:id="@+id/btSubscribe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="subscribe"
+        app:layout_constraintLeft_toRightOf="@+id/btConnect"
+        app:layout_constraintTop_toTopOf="@+id/btConnect"></Button>
+
+    <Button
+        android:id="@+id/btDisconnect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="disconnect"
+        app:layout_constraintLeft_toRightOf="@+id/btSubscribe"
+        app:layout_constraintTop_toTopOf="@+id/btConnect"></Button>
+
+    <EditText
+        android:id="@+id/etPubTopic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="pub_topic"
+        app:layout_constraintTop_toBottomOf="@+id/btConnect"></EditText>
+
+    <EditText
+        android:id="@+id/etPubMsg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="pub_msg"
+        app:layout_constraintTop_toBottomOf="@+id/etPubTopic"></EditText>
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/groupOption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="etHostUri,etPassword,etClientId,etSubQos,etSubscribeTopics,etUserName,btConnect,btDisconnect,cbCleanSession,etPubMsg,etPubTopic"
+        ></androidx.constraintlayout.widget.Group>
+
+    <Button
+        android:id="@+id/btPubMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="publish"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etPubMsg"></Button>
+
+    <Button
+        android:id="@+id/btPubMsgRandom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="publish random"
+        app:layout_constraintLeft_toRightOf="@id/btPubMsg"
+        app:layout_constraintTop_toTopOf="@+id/btPubMsg"></Button>
+
+    <Button
+        android:id="@+id/btHide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="hide"
+        app:layout_constraintLeft_toRightOf="@id/btPubMsgRandom"
+        app:layout_constraintTop_toTopOf="@+id/btPubMsg"></Button>
+
+    <Button
+        android:id="@+id/btClearLog"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="clear"
+        app:layout_constraintLeft_toRightOf="@id/btHide"
+        app:layout_constraintTop_toTopOf="@+id/btPubMsg"></Button>
+
+    <TextView
+        android:id="@+id/tvMsg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerHorizontal="true"
+        android:scrollbars="vertical"
+        android:text="hello world"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btHide"></TextView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
