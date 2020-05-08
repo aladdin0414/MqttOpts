@@ -32,7 +32,7 @@ import java.util.TimerTask;
  * @author liyc
  * @date 2020/3/27 2:11 PM
  * @copyright Jiangsu Guotai Epoint Software co., Ltd
- * @description
+ * @description MQTT后台控制服务，用于MQTT进程的启动，消息接收，消息发布，停止等过程
  */
 public class MqttService extends Service {
 
